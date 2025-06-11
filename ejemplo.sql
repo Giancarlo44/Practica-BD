@@ -4,7 +4,7 @@ USE UNS;
 DROP TABLE IF EXISTS cliente;
 CREATE TABLE cliente 
  (id                         VARCHAR(3)  NOT NULL,
-  nombre                     VARCHAR(20) NOT NULL,
+  nombre                     VARCHAR(50) NOT NULL,
   telefono                   VARCHAR(20) NOT NULL,
   direccion                  VARCHAR(20),
   ciudad                     VARCHAR(20),
@@ -16,7 +16,7 @@ CREATE TABLE cliente
   region_id                  VARCHAR(3),
   comentarios                VARCHAR(255),
   CONSTRAINT cliente_id_pk PRIMARY KEY (id),
-  CONSTRAINT cliente_historial_crediticio_ck,
+  CONSTRAINT cliente_historial_crediticio_ck
   CHECK (historial_crediticio IN ('EXCELENTE', 'BUENO', 'MALO'))
  );
 
@@ -24,8 +24,7 @@ CREATE TABLE cliente
 INSERT INTO cliente VALUES ('301', 'Sports,Inc', '540-123-4567','72 High St','Harrisonburg', 'VA','US', '22809','EXCELENTE', '12', '1', NULL);
 INSERT INTO cliente VALUES ('302', 'Toms Sporting BUENOs', '540-987-6543','6741 Main St','Harrisonburg', 'VA','US', '22809','MALO', '14', '1', NULL);
 INSERT INTO cliente VALUES ('303', 'Athletic Attire', '540-123-6789','54 Market St','Harrisonburg', 'VA','US', '22808','BUENO', '14', '1', NULL);
-INSERT INTO cliente 
-VALUES ('304', 'Athletics For All', '540-987-1234','286 Main St', 'Harrisonburg', 'VA','US', '22808','EXCELENTE', '12', '1', NULL);
+INSERT INTO cliente VALUES ('304', 'Athletics For All', '540-987-1234','286 Main St', 'Harrisonburg', 'VA','US', '22808','EXCELENTE', '12', '1', NULL);
 INSERT INTO cliente VALUES ('305', 'Shoes for Sports', '540-123-9876','538 High St','Harrisonburg', 'VA','US', '22809','EXCELENTE', '14', '1', NULL);
 INSERT INTO cliente VALUES ('306', 'BJ Athletics', '540-987-9999','632 Water St','Harrisonburg', 'VA','US', '22810','MALO', '12', '1', NULL);
 INSERT INTO cliente VALUES ('403', 'Athletics One', '717-234-6786','912 Columbia Rd','Lancaster', 'PA','US', '17601','BUENO', '14', '1', NULL);
